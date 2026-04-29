@@ -1,0 +1,181 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.minimap.enabled": false,
+    "eslint.run": "onType",
+    "editor.fontFamily": "DankMono Nerd Font",
+    "editor.fontSize": 16,
+    "terminal.integrated.scrollback": 100000,
+    "terminal.integrated.fontFamily": "DankMono Nerd Font",
+    "terminal.integrated.fontSize": 16,
+    "explorer.confirmDragAndDrop": false,
+    "[javascriptreact]": {},
+    "diffEditor.ignoreTrimWhitespace": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.fontLigatures": true,
+    "editor.suggestSelection": "first",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.userWords": [
+        "airbnb",
+        "aljunco",
+        "asana",
+        "bottlejs",
+        "eslinrc",
+        "formik",
+        "heloan",
+        "heloc",
+        "memoized",
+        "nginx",
+        "theming",
+        "twilio",
+        "twiml",
+        "unmount",
+        "uuid"
+    ],
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "markdown",
+        "php",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "todo",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml"
+    ],
+    "cSpell.allowCompoundWords": true,
+    "explorer.confirmDelete": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "files.autoSave": "onFocusChange",
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#FF7042",
+        "activityBar.activeBorder": "#FF7042",
+        "list.activeSelectionForeground": "#FF7042",
+        "list.inactiveSelectionForeground": "#FF7042",
+        "list.highlightForeground": "#FF7042",
+        "scrollbarSlider.activeBackground": "#FF704250",
+        "editorSuggestWidget.highlightForeground": "#FF7042",
+        "textLink.foreground": "#FF7042",
+        "progressBar.background": "#FF7042",
+        "pickerGroup.foreground": "#FF7042",
+        "tab.activeBorder": "#FF7042",
+        "notificationLink.foreground": "#FF7042",
+        "editorWidget.resizeBorder": "#FF7042",
+        "editorWidget.border": "#FF7042",
+        "settings.modifiedItemIndicator": "#FF7042",
+        "settings.headerForeground": "#FF7042",
+        "panelTitle.activeBorder": "#FF7042",
+        "breadcrumb.activeSelectionForeground": "#FF7042",
+        "menu.selectionForeground": "#FF7042",
+        "menubar.selectionForeground": "#FF7042",
+        "editor.findMatchBorder": "#FF7042",
+        "selection.background": "#FF704240",
+        "statusBarItem.remoteBackground": "#FF7042"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "php-cs-fixer.config": ".php-cs-fixer.php;",
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.lastDownload": 1710199070927,
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.languageServer": "None",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true,
+        "php": true,
+        "c#": true,
+        "csharp": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    "workbench.colorTheme": "Bearded Theme feat. Mintshake D Raynh",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.inlineSuggest.enabled": true,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "editor.mouseWheelZoom": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "git.autofetch": false,
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "terminal.integrated.env.osx": {},
+    "editor.multiCursorLimit": 100000,
+    "githubPullRequests.pullBranch": "never",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "console-ninja.featureSet": "Community",
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "nxConsole.showNodeVersionOnStartup": false,
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "vscode-great-icons",
+    "cursor.cpp.disabledLanguages": [
+        "yaml"
+    ],
+    "prisma.showPrismaDataPlatformNotification": false,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "update.releaseTrack": "prerelease",
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.settings.applyToAllProfiles": [
+        "git.blame.editorDecoration.enabled"
+    ]
+}

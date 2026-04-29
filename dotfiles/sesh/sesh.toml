@@ -1,0 +1,47 @@
+# =============================================================================
+# sesh.toml — smart tmux session manager config
+# Docs: https://github.com/joshmedeski/sesh
+#
+# sesh manages tmux sessions for you. Instead of manually creating sessions,
+# you run `sesh connect <path>` and it creates (or reattaches to) a named
+# session for that project. You open it via the fzf picker bound to prefix+O
+# in tmux.conf.
+#
+# sesh shows three types of entries in the picker:
+#   1. Running tmux sessions     (your active workspaces)
+#   2. [[session]] configs below (named shortcuts you define here)
+#   3. zoxide directories        (recently visited dirs, auto-populated)
+# =============================================================================
+
+# Link to the JSON schema so editors can validate and autocomplete this file
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+
+# Sort order in the picker: show running tmux sessions first, then named
+# configs, then zoxide history. This keeps your active work at the top.
+sort_order = [
+    "tmux",
+    "config",
+    "zoxide",
+]
+
+# Default startup command when sesh creates a brand new session for any path
+# that doesn't have a specific [[session]] entry below.
+[default_session]
+startup_command = "nvim ."
+
+# =============================================================================
+# Named sessions — add an entry here for any project you jump to often.
+# When you type its name in the picker, sesh will open it with the right
+# startup command and working directory.
+# =============================================================================
+
+[[session]]
+name = "dotfiles"
+path = "~/study/ajunco"
+startup_command = "nvim ."
+
+# ─── Template — uncomment and fill in for your projects ──────────────────────
+# [[session]]
+# name = "my-project"
+# path = "~/work/my-project"
+# startup_command = "nvim ."

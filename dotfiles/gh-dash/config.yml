@@ -1,0 +1,142 @@
+# =============================================================================
+# gh-dash config — GitHub dashboard in your terminal
+# Run with: gh dash
+# Docs: https://www.gh-dash.dev/configuration
+#
+# gh-dash shows your GitHub pull requests, issues, and notifications in a TUI
+# (text user interface). It has multiple tabs — PRs, Issues, Notifications —
+# each showing filtered lists. Navigate with arrow keys or vim keys (j/k).
+# Press ? inside gh-dash to see all available keybindings.
+# =============================================================================
+
+# ─── Pull Request sections ────────────────────────────────────────────────────
+# Each section is a tab inside the PRs view.
+# `filters` uses GitHub's search query syntax (same as github.com search bar).
+prSections:
+  - title: My Pull Requests
+    filters: is:open author:@me          # PRs you opened
+
+  - title: Needs My Review
+    filters: is:open review-requested:@me  # PRs where your review was requested
+
+  - title: Involved
+    filters: is:open involves:@me -author:@me  # PRs you commented on (but didn't open)
+
+  - title: Closed by Me
+    filters: is:closed author:@me         # your merged/closed PRs for reference
+
+# ─── Issue sections ──────────────────────────────────────────────────────────
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+
+  - title: Assigned
+    filters: is:open assignee:@me
+
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+
+# ─── Notification sections ───────────────────────────────────────────────────
+# Notifications are activity on GitHub that you're subscribed to.
+# This is the third tab in gh-dash (press 3 or Tab to reach it).
+notificationsSections:
+  - title: All
+    filters: ""
+  - title: Review Requested
+    filters: reason:review-requested    # someone asked for your review
+  - title: Mentioned
+    filters: reason:mention             # someone @mentioned you
+  - title: Assigned
+    filters: reason:assign              # you were assigned to something
+  - title: Participating
+    filters: reason:participating       # threads you commented in
+
+# ─── Repo auto-refresh intervals ─────────────────────────────────────────────
+repo:
+  branchesRefetchIntervalSeconds: 30   # how often to refresh branch list
+  prsRefetchIntervalSeconds: 60        # how often to refresh PR list
+
+# ─── Defaults ────────────────────────────────────────────────────────────────
+defaults:
+  view: prs                            # open on the PRs tab when gh-dash launches
+  prApproveComment: LGTM               # text inserted when you approve a PR
+  prsLimit: 20                         # max PRs to fetch per section
+  issuesLimit: 20
+  notificationsLimit: 20
+  preview:
+    open: true                         # show the detail preview panel on startup
+    width: 0.50                        # preview takes up 50% of the screen width
+
+  # Column widths for the PR list table
+  layout:
+    prs:
+      updatedAt:
+        width: 5
+      createdAt:
+        width: 5
+      repo:
+        width: 20
+      author:
+        width: 15
+      assignees:
+        width: 20
+        hidden: true                   # hide assignees column to save space
+      base:
+        width: 15
+        hidden: true
+      lines:
+        width: 15
+    issues:
+      updatedAt:
+        width: 5
+      createdAt:
+        width: 5
+      repo:
+        width: 15
+      creator:
+        width: 10
+      assignees:
+        width: 20
+        hidden: true
+
+# ─── Keybindings ─────────────────────────────────────────────────────────────
+keybindings:
+  universal:
+    quit: q
+    refresh: ctrl+r
+  prs:
+    checkout: C           # check out the PR branch locally
+    open: o               # open the PR in your browser
+    comment: c            # leave a comment
+    diff: d               # show the diff
+    assign: a
+    unassign: A
+
+# ─── Behaviour ───────────────────────────────────────────────────────────────
+confirmQuit: false           # quit immediately with q, no confirmation prompt
+showAuthorIcons: true        # show avatar icons next to author names
+smartFilteringAtLaunch: true # pre-apply the section filter when gh-dash opens
+includeReadNotifications: true
+
+# ─── How often to re-fetch everything (minutes) ──────────────────────────────
+refetchIntervalMinutes: 30
+
+# ─── Theme ────────────────────────────────────────────────────────────────────
+# Colors to match your orange (#FF7042) accent from Cursor
+theme:
+  ui:
+    sectionsShowCount: true    # show the number of items in each section tab
+    table:
+      showSeparator: true      # horizontal lines between rows
+      compact: false
+  colors:
+    text:
+      primary: "#F7F1FF"
+      secondary: "#FF7042"     # your orange accent
+      faint: "#3E4057"
+    background:
+      selected: "#3a1f1a"      # dark orange-tinted selection
+    border:
+      primary: "#FF7042"       # orange borders
+      secondary: "#7BD88F"
+      faint: "#3E4057"

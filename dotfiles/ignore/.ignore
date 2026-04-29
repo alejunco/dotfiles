@@ -1,0 +1,27 @@
+# ~/.ignore — global fd/rg ignore overrides
+#
+# Files listed here with ! are UN-ignored even if they appear in .gitignore.
+# This makes them visible in Telescope, ripgrep, etc. without disabling
+# .gitignore for everything else (which would flood results with node_modules).
+#
+# See: https://git-scm.com/docs/gitignore (same syntax, applied globally)
+
+# ─── Env files (mortage-pos patterns + common variants) ──────────────────────
+!.env
+!**/.env
+!.env.example
+!**/.env.example
+!.env.ci
+!**/.env.ci
+!.env.prod
+!**/.env.prod
+!.env.qa
+!**/.env.qa
+!.env.local
+!**/.env.local
+!.env.development
+!**/.env.development
+!.env.test
+!**/.env.test
+!.env.staging
+!**/.env.staging

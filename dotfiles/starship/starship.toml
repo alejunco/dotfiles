@@ -1,0 +1,112 @@
+# =============================================================================
+# starship.toml — prompt configuration
+# Docs: https://starship.rs/config/
+#
+# Starship builds the prompt from modules. Each module shows context about
+# the current environment: git branch, language versions, cloud context, etc.
+#
+# Key behaviour changes from defaults:
+#   - Node/Python/Go versions show ALWAYS (not just in project dirs)
+#   - Added mise/terraform module
+#   - Orange accent color (#FF7042) to match Cursor/gh-dash theme
+# =============================================================================
+
+# Wait up to 500ms for slow commands (git status on big repos, etc.)
+command_timeout = 500
+
+# Prompt layout — what shows on the left, what shows on the right
+format = """
+$directory\
+$git_branch\
+$git_status\
+${custom.nodejs}\
+$python\
+$golang\
+$terraform\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+# ─── Directory ────────────────────────────────────────────────────────────────
+[directory]
+style = "bold #FF7042"
+truncation_length = 3
+truncate_to_repo = true
+
+# ─── Git ──────────────────────────────────────────────────────────────────────
+[git_branch]
+symbol = " "
+style = "bold yellow"
+
+[git_status]
+# Show concise symbols for staged/unstaged/untracked changes
+conflicted = "⚡"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "📦"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+style = "bold red"
+
+# ─── Node.js ──────────────────────────────────────────────────────────────────
+# Disable the built-in nodejs module (it requires a JS project to show).
+# Use a custom module instead so the version always appears regardless of directory.
+[nodejs]
+disabled = true
+
+[custom.nodejs]
+# Call the mise shim directly by path — no need to spawn a fish shell.
+# This is much faster than `shell = ["fish", "-c"]` which pays fish startup + mise activation cost.
+command = "~/.local/share/mise/shims/node -v | tr -d 'v'"
+when = "test -x ~/.local/share/mise/shims/node"
+# The mise shim can take >500ms on cold start; allow it to finish rather than timeout.
+ignore_timeout = true
+# U+F0399 = nf-md-nodejs (Material Design) — capital \U + 8 hex digits required in TOML for codepoints above U+FFFF
+# Alternatives:
+#   "\uE74E " = nf-dev-nodejs_small (simpler devicons glyph)
+#   "\uE719 " = nf-dev-nodejs (detailed multi-hexagon logo, renders smaller)
+symbol = "\U000F0399 "
+style = "bold green"
+format = "[$symbol($output )]($style)"
+
+# ─── Python ───────────────────────────────────────────────────────────────────
+[python]
+symbol = " "
+# Show only in Python project dirs (too noisy otherwise)
+# Remove detect_files if you want it always visible like node
+style = "bold yellow"
+format = "[$symbol($version )($virtualenv )]($style)"
+
+# ─── Go ───────────────────────────────────────────────────────────────────────
+[golang]
+symbol = " "
+style = "bold cyan"
+
+# ─── Terraform ────────────────────────────────────────────────────────────────
+[terraform]
+format = "[$symbol$workspace]($style) "
+symbol = "💠 "
+style = "bold purple"
+# Only show in Terraform project dirs
+detect_files = [".terraform", "*.tf"]
+
+# ─── Fill — right-aligns everything after it ──────────────────────────────────
+[fill]
+symbol = " "
+
+# ─── Command duration ─────────────────────────────────────────────────────────
+[cmd_duration]
+# Show how long the last command took, if it took more than 2 seconds
+min_time = 2_000
+format = "[$duration]($style) "
+style = "bold yellow"
+
+# ─── Prompt character ─────────────────────────────────────────────────────────
+[character]
+success_symbol = "[❯](bold #FF7042)"
+error_symbol = "[❯](bold red)"

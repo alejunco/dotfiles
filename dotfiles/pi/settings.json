@@ -1,0 +1,29 @@
+{
+  "npmCommand": [
+    "mise",
+    "exec",
+    "node@lts",
+    "--",
+    "npm"
+  ],
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "medium",
+  "hideThinkingBlock": false,
+  "showHardwareCursor": true,
+  "powerline": "compact",
+  "enabledModels": [
+    "amazon-bedrock/us.anthropic.claude-sonnet-4-6",
+    "amazon-bedrock/us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "amazon-bedrock/us.anthropic.claude-opus-4-7",
+    "amazon-bedrock/us.anthropic.claude-opus-4-6-v1",
+    "amazon-bedrock/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  ],
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-subagents",
+    "npm:pi-prompt-template-model",
+    "npm:pi-mcp-adapter"
+  ],
+  "lastChangelogVersion": "0.70.6"
+}

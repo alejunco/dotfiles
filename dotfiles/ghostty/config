@@ -1,0 +1,29 @@
+# ─── Font ────────────────────────────────────────────────────────────────────
+font-family = DankMono Nerd Font
+font-size = 16
+font-feature = +liga
+font-feature = +calt
+
+# ─── Theme ───────────────────────────────────────────────────────────────────
+theme = carbonfox
+
+# ─── Shell ───────────────────────────────────────────────────────────────────
+shell-integration = fish
+
+# ─── Window ──────────────────────────────────────────────────────────────────
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+# ─── Cursor ──────────────────────────────────────────────────────────────────
+cursor-style = bar
+cursor-style-blink = true
+
+# ─── Scrollback ──────────────────────────────────────────────────────────────
+scrollback-limit = 100000
+
+# ─── Keybindings ─────────────────────────────────────────────────────────────
+# Shift+Enter sends ESC+Enter (useful in editors like neovim/pi)
+keybind = shift+enter=text:\x1b\r

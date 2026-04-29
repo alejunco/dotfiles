@@ -1,0 +1,45 @@
+# =============================================================================
+# mise global config — version manager for dev tools
+# Docs: https://mise.jdx.dev/configuration.html
+#
+# mise replaces nvm, rbenv, pyenv, tfenv, etc. with a single tool.
+# This file defines your GLOBAL tool versions — the defaults used everywhere
+# unless a project has its own mise.toml that overrides them.
+#
+# Common commands:
+#   mise install          — install all tools listed here
+#   mise use node@22      — switch node version globally
+#   mise ls               — list installed versions
+#   mise outdated         — check for newer versions
+#   mise exec node -- npm — run a command with a specific tool's version
+# =============================================================================
+
+[tools]
+# Global default tool versions.
+# "lts" and "latest" are resolved at install time.
+node      = "lts"       # Long-Term Support — stable, recommended for most projects
+python    = "latest"    # latest stable Python release
+go        = "latest"    # latest stable Go release
+terraform = "latest"    # latest stable Terraform CLI
+"npm:@mariozechner/pi-coding-agent" = "latest"
+
+# ─── Hooks ───────────────────────────────────────────────────────────────────
+[hooks]
+# After mise installs a new tool, refresh the shell's command hash table so
+# the new binary is immediately findable without opening a new terminal.
+postinstall = "hash -r"
+
+# ─── Settings ────────────────────────────────────────────────────────────────
+[settings]
+# Automatically install missing tool versions when you cd into a project that
+# has a mise.toml or .tool-versions file. No more "tool not found" errors.
+auto_install = true
+
+# Enable experimental features — required for the npm backend (used to install
+# pi via `mise use --global npm:@mariozechner/pi-coding-agent`).
+experimental = true
+
+# Respect .nvmrc and .node-version files in project directories.
+# When you cd into a project that has one of these files, mise will
+# automatically activate the correct Node version — same behaviour as nvm.
+idiomatic_version_file_enable_tools = ["node"]

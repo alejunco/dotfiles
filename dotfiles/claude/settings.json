@@ -1,0 +1,108 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx nx test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx nx build:*)",
+      "Bash(npx nx lint:*)",
+      "Bash(npx eslint:*)",
+      "Bash(git add:*)",
+      "Bash(sort:*)",
+      "Bash(git mv:*)",
+      "Bash(find:*)",
+      "Bash(APP_ENV=test npx nx run:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(open:*)",
+      "Bash(git worktree:*)",
+      "Bash(cat:*)",
+      "Bash(git fetch:*)",
+      "Bash(git merge:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(ls:*)",
+      "Bash(pkill:*)",
+      "Bash(curl:*)",
+      "Bash(docker ps:*)",
+      "Bash(PGPASSWORD=pass psql:*)",
+      "Bash(docker exec:*)",
+      "Bash(nc:*)",
+      "Bash(timeout:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker network:*)",
+      "Bash(docker inspect:*)",
+      "Bash(docker compose:*)",
+      "Bash(npm run migrate)",
+      "Bash(lsof:*)",
+      "Bash(xargs -r kill -9)",
+      "Bash(nx show project:*)",
+      "Bash(npm run seed:run)",
+      "Bash(grep:*)",
+      "Bash(nx build api)",
+      "Bash(npx nx run-many:*)",
+      "Bash(npx nx run:*)",
+      "Bash(docker build:*)",
+      "Bash(docker buildx build:*)",
+      "Bash(docker run:*)",
+      "Bash(docker rm:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:esbuild.github.io)",
+      "WebFetch(domain:stackoverflow.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:knexjs.org)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Bash(git rm:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(terraform show:*)",
+      "Bash(git config:*)",
+      "Bash(gh pr list:*)",
+      "Bash(git log:*)",
+      "Bash(APP_ENV=test npx jest:*)",
+      "Bash(nx list:*)",
+      "Bash(npx nx show projects:*)",
+      "Bash(python3:*)",
+      "Bash(gh run view:*)",
+      "Bash(npx depcheck:*)",
+      "Bash(npm run generate:joi-types:*)",
+      "Bash(npm ls:*)",
+      "Bash(npx vite:*)",
+      "Bash(npx jest:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(top:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(npx nx show project services --json)",
+      "Bash(npx nx graph:*)",
+      "Bash(gh run list:*)",
+      "Bash(npx nx affected:*)",
+      "Bash(git diff-tree:*)",
+      "Bash(git stash:*)"
+    ],
+    "defaultMode": "default"
+  },
+  "model": "global.anthropic.claude-opus-4-6-v1",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": false,
+    "worktrunk@worktrunk": false
+  },
+  "extraKnownMarketplaces": {
+    "worktrunk": {
+      "source": {
+        "source": "github",
+        "repo": "max-sixty/worktrunk"
+      }
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    }
+  }
+}
